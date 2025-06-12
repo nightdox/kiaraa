@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Para Kiara - Gustavo</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Orbitron&display=swap');
+
+  /* Reset e base */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+  body {
+    background: linear-gradient(135deg, #0d0d0d 0%, #2c1a2f 100%);
+    color: #f8f1f1;
+    font-family: 'Cinzel', serif;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  /* Fundo com imagem + sobreposição */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('https://i.pinimg.com/originals/eb/2f/52/eb2f5262263a2f28d314b6dbd81f135a.jpg') no-repeat center/cover;
+    filter: brightness(0.25) blur(3px);
+    z-index: -2;
+  }
+  body::after {
+    content: '';
+    position: fixed;
+    top:0; left:0; right:0; bottom:0;
+    background: radial-gradient(circle at center, rgba(80,20,80,0.25) 0%, transparent 70%);
+    z-index: -1;
+  }
+
+  h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.5rem;
+    letter-spacing: 0.15em;
+    color: #de78f1;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px #de78f1;
+  }
+
+  .dedication {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    font-style: italic;
+    color: #f0d7f7cc;
+    text-shadow: 0 0 5px #9b5dde;
+  }
+
+  .message {
+    max-width: 650px;
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: #e4d4e8cc;
+    margin-bottom: 3rem;
+    font-family: 'Cinzel', serif;
+    text-shadow: 0 0 3px #9b5dde66;
+  }
+
+  .signature {
+    font-size: 1.2rem;
+    font-family: 'Cinzel', serif;
+    font-style: italic;
+    color: #de78f1;
+    text-shadow: 0 0 8px #de78f1cc;
+  }
+
+  /* Corações flutuantes */
+  .heart {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle at center, #f06292 50%, transparent 70%);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    animation: floatUp 6s linear infinite;
+    opacity: 0.8;
+  }
+  .heart::before, .heart::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle at center, #f06292 50%, transparent 70%);
+    border-radius: 50%;
+  }
+  .heart::before {
+    top: -10px;
+    left: 0;
+  }
+  .heart::after {
+    left: 10px;
+    top: 0;
+  }
+  @keyframes floatUp {
+    0% {
+      transform: translateY(100vh) scale(1);
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateY(-150px) scale(0.5);
+      opacity: 0;
+    }
+  }
+
+</style>
+</head>
+<body>
+
+  <h1>Para Kiara</h1>
+  <div class="dedication">Com todo o meu coração, Gustavo</div>
+
+  <div class="message">
+    Meu amor,<br><br>
+
+    Ainda me parece um sonho poder viver este Dia dos Namorados com você. Que sorte a minha… que sorte a nossa. Que esse seja apenas o primeiro de muitos — e que jamais exista um último.<br><br>
+
+    É curioso pensar que tudo começou em um joguinho de voz no Roblox… e olha onde chegamos. De um encontro improvável, nasceu algo tão bonito, tão verdadeiro, tão nosso.<br><br>
+
+    Com você, a vida parece mais leve. O mundo desacelera, o coração encontra repouso. Você é aquele suspiro de paz no meio da bagunça dos meus dias.<br><br>
+
+    Obrigado por estar aqui, por cada gesto de carinho, por cada esforço que faz por nós. Sei que nem sempre sou fácil, mas você faz parecer tão simples… você me entende no silêncio, me acalma no caos, me ganha com um sorriso.<br><br>
+
+    Você me deixa bobo — e feliz. Me faz querer acordar todos os dias e viver com mais coragem.<br><br>
+
+    Já não sei ficar sem você por muito tempo. Sua ausência pesa, seu silêncio faz falta. E no fundo, eu já entendi: sem você, a vida perde o brilho.<br><br>
+
+    Obrigado por existir. Obrigado por ser lar, abrigo, amor.<br><br>
+
+    Eu te amo — com tudo o que sou.
+  </div>
+
+  <div class="signature">— Gustavo</div>
+
+<script>
+  // Função para criar corações em posições aleatórias
+  function createHeart() {
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.animationDuration = 4 + Math.random() * 3 + 's';
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 7000);
+  }
+
+  // Criar vários corações em intervalos
+  setInterval(createHeart, 500);
+</script>
+
+</body>
+</html>
